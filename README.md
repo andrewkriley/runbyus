@@ -28,3 +28,4 @@ See [CONCEPT.md](CONCEPT.md) and [docs/decisions.md](docs/decisions.md). Operato
 - Test-driven. Scripted tests are the default path.
 - Secrets stay in environment variables. Never commit values. Names are in [`.env.example`](.env.example).
 - Web UI uses pinned [andrewkriley/design-system](https://github.com/andrewkriley/design-system) CSS variables. Do not fetch GitHub at runtime.
+- GitHub Actions `hygiene` scans the tree (and paths) and fails on lab hostnames and product-family names. The scanner is tested against examples that must match.
