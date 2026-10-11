@@ -2,7 +2,7 @@
 
 runbyus is a personal agent platform: one ledger, one harness, two runtime adapters, a product chat, and scripted scenarios that prove the design without live models.
 
-Design doctrine lives in [andrewkriley/runbyme](https://github.com/andrewkriley/runbyme). This repository is the public extract of the runnable harness.
+This repository is the public extract of the runnable harness. Design notes live in this file and [docs/decisions.md](docs/decisions.md).
 
 ## Ledger is the source of truth
 

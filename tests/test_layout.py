@@ -1,4 +1,4 @@
-"""The runbyus tree matches runbyme docs/BAKEOFF.md §3."""
+"""The runbyus tree keeps the shared harness layout."""
 
 from __future__ import annotations
 

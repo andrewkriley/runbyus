@@ -1,10 +1,10 @@
 # Decision log
 
-Append only. Platform design lives in [andrewkriley/runbyme](https://github.com/andrewkriley/runbyme). This file is the public extract history.
+Append only. This file is the public extract history.
 
 | # | Area | Decision | Status | Date |
 |---|---|---|---|---|
-| P1 | Harness | The runnable concept lives in this repo. runbyme stays the design source. | Agreed | 2026-10-10 |
+| P1 | Harness | The runnable concept and design notes live in this repo. | Agreed | 2026-10-10 |
 | P2 | Ledger | Unit tests use SQLite with the SPEC §3 schema. Compose is Postgres. Same tables. | Agreed | 2026-10-10 |
 | P3 | Models | Tests inject scripted / FunctionModel steps. Live keys stay in environment variables. | Agreed | 2026-10-10 |
 | P4 | Q10 | Runtime winner is PydanticAI. LangGraph stays in-tree for a later switch. | Agreed | 2026-10-11 |

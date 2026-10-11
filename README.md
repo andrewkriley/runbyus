@@ -1,6 +1,6 @@
 # runbyus
 
-A ledger-backed assistant with two runtime adapters on one harness. Design lives in [andrewkriley/runbyme](https://github.com/andrewkriley/runbyme). This repo is the runnable concept: SPEC §3 ledger as source of truth, channel ≠ space, scripted S1/S2, product chat with history and in-product session / trace / span inspect.
+A ledger-backed assistant with two runtime adapters on one harness. This repo is the runnable concept: SPEC §3 ledger as source of truth, channel ≠ space, scripted S1/S2, product chat with history and in-product session / trace / span inspect.
 
 Default runtime is PydanticAI. LangGraph stays in-tree for a later switch (`RUNBYUS_RUNTIME` / `--runtime`). Tools stay on mock DNS and mock list servers.
 
