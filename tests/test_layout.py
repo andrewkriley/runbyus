@@ -39,6 +39,8 @@ class TestRunbyusLayout(unittest.TestCase):
             BAKEOFF / "ui" / "design-system-source.json",
             ROOT / ".env.example",
             ROOT / "CONCEPT.md",
+            ROOT / ".github" / "workflows" / "test.yml",
+            ROOT / ".github" / "workflows" / "hygiene.yml",
         ]
         missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
         self.assertEqual(missing, [], f"runbyus layout missing: {missing}")
@@ -100,6 +102,11 @@ class TestRunbyusLayout(unittest.TestCase):
         self.assertIn("design-system", source)
         self.assertIn("v0.1.0", source)
         self.assertNotIn("tokenSet", source)
+
+    def test_hygiene_workflow_runs_public_scan(self) -> None:
+        text = (ROOT / ".github" / "workflows" / "hygiene.yml").read_text(encoding="utf-8")
+        self.assertIn("tests.test_public_hygiene", text)
+        self.assertIn("Forbidden house hosts", text)
 
     def test_compose_runs_postgres_for_ledger(self) -> None:
         text = (BAKEOFF / "compose.yaml").read_text(encoding="utf-8")

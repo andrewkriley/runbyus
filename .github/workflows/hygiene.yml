@@ -1,0 +1,19 @@
+name: hygiene
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  house-hosts:
+    name: Forbidden house hosts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync
+      - name: Scan published tree
+        run: uv run python -m unittest tests.test_public_hygiene -v
