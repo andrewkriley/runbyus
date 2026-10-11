@@ -1,0 +1,36 @@
+/* Pinned design-system CSS variables.
+   Source: runbyus/ui/design-system-source.json. Do not invent values here.
+   Do not fetch GitHub at runtime. */
+:root {
+  --bg-canvas: #0e1116;
+  --bg-panel: #161b22;
+  --text-primary: #e6edf3;
+  --text-muted: #8b949e;
+  --border-default: #30363d;
+  --accent-default: #58a6ff;
+  --accent-success: #3fb950;
+  --accent-warning: #d29922;
+  --accent-danger: #f85149;
+  --accent-violet: #a371f7;
+  --accent-cyan: #39d0d8;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+  --type-display-size: 28px;
+  --type-display-weight: 700;
+  --type-display-line: 36px;
+  --type-title-size: 16px;
+  --type-title-weight: 500;
+  --type-title-line: 24px;
+  --type-body-size: 14px;
+  --type-body-weight: 400;
+  --type-body-line: 20px;
+  --type-caption-size: 12px;
+  --type-label-size: 11px;
+}

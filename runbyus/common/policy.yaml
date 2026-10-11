@@ -1,0 +1,39 @@
+principals:
+  - { id: prn_01, name: Operator, active: true }
+
+labels:
+  - { id: lbl_01, name: personal }
+  - { id: lbl_02, name: professional }
+  - { id: lbl_03, name: infra }
+  - { id: lbl_04, name: shared }
+
+spaces:
+  - { id: spc_01, name: infra, members: [prn_01], labels: [lbl_03] }
+  - { id: spc_02, name: p1, members: [prn_01], labels: [lbl_01, lbl_02] }
+  - { id: spc_06, name: family, members: [prn_01], labels: [lbl_04] }
+
+channel_accounts:
+  - { id: cha_web, principal_id: prn_01, channel: web, external_user_id: p1 }
+  - { id: cha_tg, principal_id: prn_01, channel: telegram, external_user_id: p1 }
+
+match_rules:
+  - match: '(?i)^add\s+(.+?)(?:\s+to\s+(?:the\s+)?list)?$'
+    space: family
+    label: shared
+    agent: list
+    tier: rules
+    risk: reversible
+    provider: none
+    model: ""
+    reason: "static keyword: add … to the list"
+
+model_allowlists:
+  - { space: infra, label: infra, models: [local, anthropic, openai] }
+  - { space: p1, label: personal, models: [local, anthropic, openai] }
+  - { space: p1, label: professional, models: [local, anthropic, openai] }
+  - { space: family, label: shared, models: [local, anthropic] }
+
+default_models:
+  local: { provider: local, model: llama-classifier }
+  anthropic: { provider: anthropic, model: cloud-diagnose }
+  openai: { provider: openai, model: gpt-runbyus }

@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/andrewkriley/design-system",
+  "pinKind": "release",
+  "version": "0.1.0",
+  "releaseTag": "v0.1.0",
+  "commit": "0fd043eab0e32549f99388e78b55d9e01927c308",
+  "note": "Pinned CSS variables only. Do not fetch GitHub at runtime."
+}

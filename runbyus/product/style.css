@@ -1,0 +1,123 @@
+.product-page {
+  max-width: 1440px;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 280px;
+  gap: var(--space-lg);
+  align-items: stretch;
+  min-height: 560px;
+}
+
+.rail,
+.inspect,
+.stack.product {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stack.product {
+  border-top: 3px solid var(--accent-default);
+}
+
+.rail-head,
+.inspect .stack-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  overflow: auto;
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.history-item.active {
+  border-color: var(--accent-default);
+}
+
+.history-title {
+  font-weight: var(--type-title-weight);
+}
+
+.history-preview {
+  color: var(--text-muted);
+  font-size: var(--type-caption-size);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stack.product .thread {
+  min-height: 280px;
+  flex: 1;
+}
+
+.stack.product .composer {
+  margin-top: var(--space-md);
+}
+
+.bubble.pending {
+  align-self: flex-start;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: var(--radius-full);
+  padding: 1px 8px;
+  font-size: var(--type-label-size);
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border-default);
+  color: var(--text-muted);
+}
+
+.badge.session { color: var(--accent-cyan); border-color: var(--accent-cyan); }
+.badge.trace { color: var(--accent-violet); border-color: var(--accent-violet); }
+.badge.span { color: var(--accent-default); border-color: var(--accent-default); }
+
+.tree {
+  overflow: auto;
+  font-size: var(--type-caption-size);
+}
+
+.tree .row { margin: 6px 0; }
+.tree .indent { padding-left: 22px; }
+.tree .muted { display: block; word-break: break-all; }
+
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .rail, .inspect {
+    max-height: 280px;
+  }
+}

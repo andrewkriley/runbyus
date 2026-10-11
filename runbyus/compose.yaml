@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: runbyus
+      POSTGRES_USER: runbyus
+      POSTGRES_PASSWORD: runbyus
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./common/ledger/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U runbyus -d runbyus"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

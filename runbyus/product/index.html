@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>runbyus — assistant</title>
+  <link rel="stylesheet" href="/tokens.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/product.css" />
+</head>
+<body>
+  <div class="page product-page">
+    <header>
+      <div>
+        <h1>runbyus</h1>
+        <p class="lede">One assistant. A channel is a door. The router picks the space and model. Default PydanticAI.</p>
+      </div>
+    </header>
+
+    <div class="shell">
+      <aside class="rail" data-product-history>
+        <div class="rail-head">
+          <h2>History</h2>
+          <button type="button" class="btn ghost" data-new-chat>New chat</button>
+        </div>
+        <nav class="history-list" data-history-list>
+          <p class="muted empty">No chats yet.</p>
+        </nav>
+      </aside>
+
+      <section class="stack product" data-product>
+        <div class="stack-head">
+          <h2 data-product-title>Chat</h2>
+          <div class="meta" data-product-meta></div>
+        </div>
+        <div class="thread" data-product-thread>
+          <p class="muted empty">Waiting for a human turn.</p>
+        </div>
+        <p class="error" data-product-error></p>
+        <div class="actions">
+          <button class="btn success" data-approve disabled>Approve</button>
+          <button class="btn danger" data-deny disabled>Deny</button>
+          <button class="btn ghost" data-resume disabled>Resume</button>
+        </div>
+        <form class="composer" data-product-composer>
+          <label class="sr-only" for="product-turn">Message</label>
+          <textarea id="product-turn" data-message rows="3" placeholder="Message runbyus"></textarea>
+          <div class="composer-row">
+            <p class="muted composer-hint">Pickup a history row to continue that thread. Approvals stay in the thread.</p>
+            <button type="submit" class="btn primary" data-send>Send</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="inspect" data-product-inspect>
+        <div class="stack-head">
+          <h2>Session</h2>
+        </div>
+        <p class="muted" data-inspect-session>No session yet.</p>
+        <div class="tree" data-inspect-tree></div>
+      </aside>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
